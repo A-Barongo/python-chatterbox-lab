@@ -32,7 +32,7 @@ def messages():
         new_message = Message(body=body, username=username)
         db.session.add(new_message)
         db.session.commit()
-        response=make_response(jsonify(new_message.to_dict()),200)
+        response=make_response(jsonify(new_message.to_dict()),201)
         return response
 
 @app.route('/messages/<int:id>',methods=['PATCH','DELETE'])
